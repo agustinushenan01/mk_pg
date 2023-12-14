@@ -29,11 +29,13 @@ body {
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header h1 {
     font-size: 22px;
     margin-right: 10px; 
+    font-weight: bold;
 }
 
 .content {
@@ -52,7 +54,26 @@ body {
 .form button {
     background-color: rgb(255, 39, 6);
     border: none;
-    width: 4em;
+    width: 6em;
     border-radius: 10px;
-    box-shadow: 0 0 5px 5px rgb(255, 128, 0);
+    box-shadow: 0 0 5px 2px rgb(0, 0, 0);
+}
+
+.form .content .tobat-img {
+    margin-bottom: 1em;
+}
+
+.form .content form input {
+    margin-right: 1em;
+    height: 1em;
+    width: 200px;
+    padding: .4em;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.form .content form {
+    display: flex;
+    justify-content: space-between;
 }
