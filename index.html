@@ -40,13 +40,6 @@
         let initialHearts = remainingHearts;
         let currentQuestionIndex = 0;
 
-        function startQuiz() {
-            currentQuestionIndex = 0;
-            remainingHearts = initialHearts;
-            nextButton.innerHTML = "LANJUT";
-            showQuestion();
-        }
-
         function checkAnswer() {
             const userAnswer = document.getElementById("answerInput").value.toUpperCase();
             const correctAnswer = correctAnswers[currentQuestionIndex];
@@ -68,10 +61,16 @@
             }
         }
 
-
         function gameOver() {
             alert("Game Over! Kamu kalah.");
-            // Tambahkan logika lain yang ingin Anda lakukan ketika permainan berakhir
+            resetGame();
+        }
+
+        function resetGame() {
+            currentQuestionIndex = 0;
+            remainingHearts = initialHearts;
+            resetState();
+            showQuestion();
         }
 
         function nextQuestion() {
@@ -85,8 +84,6 @@
                 // Tambahkan logika lain yang ingin Anda lakukan ketika permainan selesai
             }
         }
-
-
 
         function resetState() {
             if (remainingHearts === 0) {
@@ -106,6 +103,11 @@
 
         function showQuestion() {
             document.getElementById("questionImage").src = `asset/${imageNames[currentQuestionIndex]}`;
+        }
+
+        // Panggil resetGame saat memulai permainan
+        function startQuiz() {
+            resetGame();
         }
     </script>
 </body>
