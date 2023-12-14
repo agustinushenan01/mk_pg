@@ -1,3 +1,4 @@
+/* style.css */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Nunito:wght@400;700&display=swap');
 
 * {
@@ -29,13 +30,14 @@ body {
 .header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .header h1 {
     font-size: 22px;
     margin-right: 10px; 
     font-weight: bold;
+    margin-right: auto;
 }
 
 .content {
@@ -48,7 +50,7 @@ body {
 
 .form .heart {
     width: 30px;
-    display: inline-block; 
+    display: inline-block;
 }
 
 .form button {
@@ -57,6 +59,7 @@ body {
     width: 6em;
     border-radius: 10px;
     box-shadow: 0 0 5px 2px rgb(0, 0, 0);
+    cursor: pointer;
 }
 
 .form .content .tobat-img {

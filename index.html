@@ -12,19 +12,53 @@
         <div class="form">
             <div class="header">
                 <h1>TEBAK GAMBAR</h1>
-                <img src="asset/heart.png" alt="" class="heart">
-                <img src="asset/heart.png" alt="" class="heart">
-                <img src="asset/heart.png" alt="" class="heart">
+                <img src="asset/heart.png" alt="" class="heart" id="heart1">
+                <img src="asset/heart.png" alt="" class="heart" id="heart2">
+                <img src="asset/heart.png" alt="" class="heart" id="heart3">
             </div>
             
             <div class="content">
                 <img src="asset/tobat.jpg" alt="" class="tobat-img">
-                <form action="">
-                    <input type="text" placeholder="JAWAB DISINI">
-                    <button type="button">Cek</button>
+                <form id="guessForm">
+                    <input type="text" placeholder="JAWAB DISINI" id="answerInput">
+                    <button type="button" onclick="checkAnswer()">Cek</button>
+                    <button type="button" id="nextButton" style="display: none;" onclick="nextQuestion()">Lanjut</button>
                 </form>
             </div>
         </div>
     </div>
+    <script>
+        let correctAnswer = "jawaban yang benar"; // Ganti dengan jawaban yang benar
+        let attempts = 0;
+
+        function checkAnswer() {
+            let userAnswer = document.getElementById("answerInput").value.toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                // Jawaban benar
+                document.getElementById("guessForm").style.display = "none";
+                document.getElementById("nextButton").style.display = "block";
+            } else {
+                // Jawaban salah
+                attempts++;
+                let heartId = "heart" + attempts;
+                document.getElementById(heartId).style.display = "none";
+
+                if (attempts === 3) {
+                    gameOver();
+                }
+            }
+        }
+
+        function gameOver() {
+            alert("Game Over! Kamu kalah.");
+            // Tambahkan logika lain yang ingin Anda lakukan ketika permainan berakhir
+        }
+
+        function nextQuestion() {
+            // Tambahkan logika untuk pertanyaan selanjutnya, jika diperlukan
+            alert("Selamat! Kamu berhasil.");
+        }
+    </script>
 </body>
 </html>
