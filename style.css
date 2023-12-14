@@ -62,6 +62,10 @@ body {
     cursor: pointer;
 }
 
+#nextButton {
+    display: none;
+}
+
 .form .content .tobat-img {
     margin-bottom: 1em;
 }
